@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "STIBC Digital Stamp Folder Selector",
+  "version": "1.0",
+  "description": "Allows you to stamp a whole folder at once",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "storage","tabs","windows","downloads"],
+  "host_permissions": ["https://certify.stibc.org/"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://certify.stibc.org/"],
+      "css": ["content.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://certify.stibc.org/*"]
+    }
+  ]
+}

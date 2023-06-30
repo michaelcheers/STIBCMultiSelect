@@ -1,0 +1,1672 @@
+#extension{
+    z-index: 2000000;
+}
+
+#extension #divHoveringSelectedElement{
+    position: absolute; 
+    background-color: rgba(0, 0, 255, 0.1); 
+    z-index: 2000000; 
+    border: 1px solid rgba(74, 106, 221, 1);
+    pointer-events: none;
+    display: none;
+}
+
+#extension #selectedElement{
+    position: absolute; 
+    background-color: rgba(0, 0, 255, 0.1); 
+    z-index: 2000000; 
+    border: 1px solid rgba(74, 106, 221, 1);
+    pointer-events: none;
+    display: none;
+}
+
+#extension[state="quick-capture-new-issue"] #divHoveringSelectedElement{
+    display: block;
+}
+
+#extension[state="quick-capture-issue-selected"] #divHoveringSelectedElement{
+    display: block;
+}
+
+#extension[state="project-new-issue"] #divHoveringSelectedElement{
+    display: block;
+}
+
+#extension[state="project-issue-selected"] #divHoveringSelectedElement{
+    display: block;
+}
+
+#extension[state="quick-capture-issue-selected"] #selectedElement{
+    display: block;
+}
+
+#extension[state="quick-capture-issue-posting"] #selectedElement{
+    display: block;
+}
+
+#extension[state="project-issue-selected"] #selectedElement{
+    display: block;
+}
+
+#extension[state="project-issue-posting"] #selectedElement{
+    display: block;
+}
+
+#extension[state="quick-capture-issue-selected"] #issuePost{
+    top: calc(100% - 55px);
+}
+
+#extension[state="quick-capture-issue-posting"] #issuePost{
+    top: calc(100% - 55px);
+}
+
+#extension[state="project-issue-selected"] #issuePost{
+    top: calc(100% - 55px);
+}
+
+#extension[state="project-issue-posting"] #issuePost{
+    top: calc(100% - 55px);
+}
+
+#divHoveringSelectedLabel, #selectedLabel{
+    position: absolute;
+    top: -24px;
+    left: -1px;
+    padding: 4px 8px; 
+    background-color: rgba(74, 106, 221, 1); 
+    font-size: 9px; 
+    letter-spacing: 0.5px; 
+    line-height: 16px; 
+    border-radius: 3px 3px 3px 0px; 
+    pointer-events: none;
+    color: white;
+}
+
+#extension #follower{
+    display: none;
+	position: fixed;
+    cursor: none;
+    flex-direction: row;
+    gap: 6px;
+    overflow: hidden;
+    padding-top: 4px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 2000000;
+}
+
+#extension[state="quick-capture-new-issue"] #follower{
+    display: flex;
+}
+
+#extension[state="project-new-issue"] #follower{
+    display: flex;
+}
+
+#follower #icon{
+    align-items: center;
+    background: linear-gradient(90deg, rgb(63, 161, 247) 0%, rgb(74, 106, 221) 100%);
+    border-radius: 9px;
+    display: flex;
+    flex-direction: row;
+    height: 18px;
+    justify-content: center;
+    width: 18px;
+    color: white;
+}
+
+#follower #cursorLabel{
+    align-items: center;
+    background: linear-gradient(90deg, rgb(63, 161, 247) 0%, rgb(74, 106, 221) 100%);
+    border-radius: 12px;
+    color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 16px;
+    padding: 4px 12px;
+    color: white;
+}
+
+#extension #issuePost{
+    position: fixed;
+    top: calc(100% + 15px);
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    flex: 1 1 0%;
+    padding: 4px;
+    border-radius: 10px;
+    width: 720px;
+    left: calc(50% - 360px);
+    box-sizing: border-box;
+    filter: drop-shadow(rgba(0, 0, 0, 0.48) 0px 0px 1px) drop-shadow(rgba(0, 0, 0, 0.24) 0px 16px 32px);
+    background: linear-gradient(90deg, rgba(63, 161, 247, 1) 0%, rgba(74, 106, 221, 1) 100%);
+    z-index: 2000000;
+}
+
+
+#extension #issuePostContainer{
+    align-items: stretch;
+    cursor: grab;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    gap: 4px;
+    height: 32px;
+}
+
+#extension #issuePostIcon1{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: 32px;
+    margin-left: 4px;
+}
+
+#extension #issuePostIcon2{
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: center;
+    width: 20px;
+}
+
+#extension #issuePostInput{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+}
+
+#extension[state="quick-capture-issue-posting"] #issuePostInputField{
+    pointer-events: none !important;
+}
+
+#extension[state="quick-capture-issue-posting"] #issuePostBtn{
+    pointer-events: none;
+}
+
+#extension[state="project-issue-posting"] #issuePostInputField{
+    pointer-events: none !important;
+}
+
+#extension[state="project-issue-posting"] #issuePostBtn{
+    pointer-events: none;
+}
+
+#extension #issuePostInput input:focus{
+    background-color: #fff !important;
+}
+
+#extension #issuePostBtn{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 32px;
+    max-width: 87px;
+    line-height: 20px;
+    min-height: 27px;
+    text-decoration: none;
+    transition: background-color 0.2s ease 0s;
+    user-select: none;
+
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 1;
+}
+
+#extension #issuePostBtn:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#extension #issuePostBtn div{
+    margin-right: 6px;
+}
+
+#extension #extension-open-btn{
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    z-index: 2000000;
+    width: 40px;
+    height: 40px;
+    display: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgba(202, 202, 202, 0.5);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    cursor: pointer;
+}
+
+#extension[state="start"] #extension-open-btn{
+    display: flex;
+}
+
+#extension #extension-open-btn svg{
+    transform: none;
+
+    transition: transform 0.3s;
+}
+
+#extension #extension-open-btn:hover svg{
+    transform: scale(0.8);
+}
+
+#extension #extension-menubar{
+    backdrop-filter: blur(16px);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgba(202, 202, 202, 0.5);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    border-bottom: none;
+    border-radius: 0px 10px 0px 0px;
+    height: 0;
+    width: 0;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    position: fixed;
+    left: 0;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    overflow: hidden;
+
+    transition: height 0.2s, width 0.2s cubic-bezier(0.6, 1.15, 1, 1) 0.2s;
+    z-index: 2000000;
+}
+
+#extension #extension-menubar-container{
+    color: rgb(51, 51, 51);
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 400;
+    gap: 26px;
+    overflow-y: auto;
+    padding: 32px;
+}
+
+#extension #extension-toolbar{
+    backdrop-filter: blur(16px);
+    background: rgb(218, 218, 218);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    border-top: none;
+    border-radius: 0px 0px 10px 0px;
+    height: 40px;
+    width: 440px;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    position: fixed;
+    left: -440px;
+    bottom: 20px;
+    padding: 0;
+
+    transition: left 0.25s;
+    transition-delay: 0.25s;
+    transition-timing-function:  cubic-bezier(0.6, 1.15, 1, 1);
+
+    z-index: 2000000;
+}
+
+#extension[state="open"] #extension-menubar{
+    height: 380px;
+    width: 438px;
+
+    transition: height 0.25s cubic-bezier(0.6, 1.15, 1, 1) 0.25s, width 0.25s;
+    
+}
+
+#extension[state="open"] #extension-toolbar{
+    left: 0;
+    transition: left 0.25s;
+}
+
+#extension #extension-quick-capture{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#extension #extension-quick-capture-title{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#extension #extension-quick-capture-body{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+#extension #extension-projects{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#extension #extension-projects-title{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#extension #extension-projects-title-left{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#extension #extension-projects-title-right{
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: 34px;
+    outline: none;
+    padding: 0px;
+    transition: all 0.2s ease 0s;
+}
+
+#extension #extension-projects-title-right:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 4px;
+    padding: 0px 4px 0px 12px;
+}
+
+#extension #extension-projects-body{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#extension #extension-toolbar{
+    align-items: center;
+    background: rgb(218, 218, 218);
+    box-sizing: border-box;
+    display: block;
+    height: 40px;
+    min-height: 40px;
+}
+
+#extension #extension-toolbar-container{
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    padding: 4px 12px;
+    visibility: visible;
+}
+
+#extension[state="start"] #extension-toolbar-container{
+    visibility: hidden;
+}
+
+#extension #extension-quick-capture-btn{
+    align-items: center;
+    background: linear-gradient(90deg, rgba(63, 161, 247, 0.8) 0%,  rgba(74, 106, 221, 0.8)
+ 100%);
+    border: none;
+    border-radius: 6px;
+    color: rgb(15, 15, 15);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    gap: 6px;
+    line-height: 20px;
+    outline: none;
+    padding: 6px 10px;
+}
+
+#extension #extension-shortcut{
+    display: block;
+    margin-left: 8px;
+}
+
+#extension #extension-shortcut-container{
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+#extension #extension-ctrl-icon{
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 4px 6px;
+}
+
+#extension .extension-plus-icon{
+    color: rgb(103, 108, 118);
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#extension #extension-shift-icon{
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 4px 6px;
+}
+
+#extension #extension-x-icon{
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 4px 6px;
+}
+
+#extension #extension-toolbar-btns{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+#extension #extension-dashboard-btn-container{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#extension #extension-dashboard-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    margin: 0px;
+    outline: none;
+    padding: 4px;
+}
+
+#extension #extension-exit-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    height: auto;
+    margin: 0px;
+    outline: none;
+    padding: 4px;
+}
+
+#extension #extension-quick-capture-back{
+    transform: translateX(-60px) translateZ(0px);
+    opacity: 1;
+    bottom: 16px;
+    box-sizing: border-box;
+    left: 12px;
+    position: fixed;
+    z-index: 2000000;
+    transition: transform 0.2s;
+}
+
+#extension[state="quick-capture-new-issue"] #extension-quick-capture-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension[state="quick-capture-issue-selected"] #extension-quick-capture-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension[state="quick-capture-issue-posting"] #extension-quick-capture-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+
+#extension[state="project-new-issue"] #extension-project-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension[state="project-issue-selected"] #extension-project-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension[state="project-issue-posting"] #extension-project-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension #extension-quick-capture-back-container{
+    align-items: center;
+    background: rgb(15, 15, 15);
+    border-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    position: relative;
+    transition: all 0.2s ease 0s;
+    width: 40px;
+}
+
+#extension #extension-quick-capture-back-icon{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    overflow: hidden;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+#extension #extension-quick-capture-back-top-icon{
+    align-items: center;
+    background: rgb(202, 202, 202);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: center;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    transition: background-color 0.2s ease 0s;
+    width: 20px;
+}
+
+#extension #extension-quick-capture-back-top-icon-container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#extension #extension-no-quick-captures{
+    border: 1px dashed rgb(157, 166, 182);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 42px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+}
+
+#extension #extension-no-projects{
+    border: 1px dashed rgb(157, 166, 182);
+    border-radius: 8px;
+    color: rgb(103, 108, 118);
+    padding: 12px 16px;
+    min-height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#extension #create-first-project{
+    color: rgb(15, 15, 15);
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.spinner {
+  margin: 0;
+  width: 6px;
+  height: 20px;
+  position: relative;
+  display: none;
+}
+
+#extension[state="quick-capture-issue-posting"] #issuePost .spinner{
+    display: block;
+}
+
+#extension[state="quick-capture-issue-posting"] #issuePostBtn .issue-post-btn-text{
+    display: none;
+}
+
+#extension[state="quick-capture-issue-posting"] #issuePostBtn svg{
+    display: none;
+}
+
+#extension[state="project-issue-posting"] #issuePost .spinner{
+    display: block;
+}
+
+#extension[state="project-issue-posting"] #issuePostBtn .issue-post-btn-text{
+    display: none;
+}
+
+#extension[state="project-issue-posting"] #issuePostBtn svg{
+    display: none;
+}
+
+.spinner .spinner-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.spinner .spinner-item:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  height: 30%;
+  background-color: #333;
+  border-radius: 100%;
+  -webkit-animation: spinner-itemFadeDelay 1.2s infinite ease-in-out both;
+          animation: spinner-itemFadeDelay 1.2s infinite ease-in-out both;
+}
+.spinner .spinner-item2 {
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.spinner .spinner-item3 {
+  -webkit-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+.spinner .spinner-item4 {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.spinner .spinner-item5 {
+  -webkit-transform: rotate(120deg);
+      -ms-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+.spinner .spinner-item6 {
+  -webkit-transform: rotate(150deg);
+      -ms-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+.spinner .spinner-item7 {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.spinner .spinner-item8 {
+  -webkit-transform: rotate(210deg);
+      -ms-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+.spinner .spinner-item9 {
+  -webkit-transform: rotate(240deg);
+      -ms-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+.spinner .spinner-item10 {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.spinner .spinner-item11 {
+  -webkit-transform: rotate(300deg);
+      -ms-transform: rotate(300deg);
+          transform: rotate(300deg); 
+}
+.spinner .spinner-item12 {
+  -webkit-transform: rotate(330deg);
+      -ms-transform: rotate(330deg);
+          transform: rotate(330deg); 
+}
+.spinner .spinner-item2:before {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s; 
+}
+.spinner .spinner-item3:before {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s; 
+}
+.spinner .spinner-item4:before {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s; 
+}
+.spinner .spinner-item5:before {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s; 
+}
+.spinner .spinner-item6:before {
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s; 
+}
+.spinner .spinner-item7:before {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s; 
+}
+.spinner .spinner-item8:before {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s; 
+}
+.spinner .spinner-item9:before {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+.spinner .spinner-item10:before {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+.spinner .spinner-item11:before {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+.spinner .spinner-item12:before {
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+
+@-webkit-keyframes spinner-itemFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+@keyframes spinner-itemFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; } 
+}
+
+#extension #extension-quick-capture-temp{
+    align-items: flex-start;
+    background: linear-gradient(90deg, rgba(63, 161, 247, 0.8) 0%, rgba(74, 106, 221, 0.8) 100%);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 68px;
+    max-height: 68px;
+    min-height: 68px;
+    padding: 12px 16px;
+    transition: all 0.3s ease 0s;
+}
+
+#extension #extension-quick-capture-temp:hover{
+    background: linear-gradient(90deg, rgba(63, 161, 247, 0.9) 0%, rgba(74, 106, 221, 0.9) 100%);
+}
+
+#extension .extension-project-mark{
+    margin-top: 4px;
+    align-items: center;
+    background: transparent;
+    border-color: rgb(103, 108, 118);
+    border-radius: 28px;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 14px;
+    justify-content: center;
+    transition: all 0.5s ease 0s;
+    width: 14px;
+}
+
+#extension .extension-project-main{
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0px;
+    justify-content: space-between;
+}
+
+#extension .extension-project-name{
+    align-items: center;
+    color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
+    line-height: 20px;
+}
+
+#extension .extension-project-time{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    line-height: 18px;
+}
+
+#extension .extension-project-detail{
+    align-items: flex-end;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#extension .extension-project-user{
+    background: black;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 18px;
+    overflow: hidden;
+    transition: all 0.12s ease 0s;
+    width: 18px;
+}
+
+#extension .extension-project-issues{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    line-height: 18px;
+}
+
+#extension .extension-view-close{
+    position: fixed;
+    align-items: center;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgba(202, 202, 202, 0.5);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    height: 40px;
+    padding-right: 12px;
+    left: 0;
+    bottom: 20px;
+    z-index: 2000000;
+
+    animation-name: view-close-animation;
+    animation-duration: 0.6s;
+}
+
+@keyframes view-close-animation {
+    0% {transform: translateX(-100%);}
+    50% {transform: translateX(-100%);}
+    100% {transform: translateX(0%);}
+}
+
+#extension .extension-view-setting-btn{
+    border: none;
+    border-right: 1px solid rgba(15, 15, 15, 0.05);
+    cursor: pointer;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background: none;
+}
+
+#extension .extension-view-setting-btn:hover path{
+    fill: #444444;
+}
+
+#extension .extension-view-close-btn{
+    align-items: center;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 32px;
+    justify-content: center;
+    transition: all 0.2s ease 0s;
+    width: 32px;
+}
+
+#extension .extension-view-close-btn:hover{
+    background-color: white;
+}
+
+.extension-issue{
+    transform-origin: top left;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+.extension-issue.issue-detail-animation{
+    transform: scale(0);
+    transition: transform 0.2s;
+}
+
+
+#extension-view-issue-list{
+    position: fixed;
+    width: 412px;
+    height: 100%;
+    top: 0;
+    right: -420px;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgba(202, 202, 202, 0.5);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    z-index: 2000001;
+    transition: right 0.2s;
+    font-family: SwissIntl, Graphik, Inter, sans-serif;
+}
+
+#extension-view-issue-list.show{
+    right: 0px;
+}
+
+.extension-view-issue-list-title{
+    height: 30px;
+    margin-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    position: relative;
+}
+
+.extension-view-issue-list-items{
+    position: relative;
+    margin-top: 12px;
+    height: calc(100% - 54px);
+    overflow: auto;
+}
+
+#extension-view-issue-list-title-dropbtn{
+    width: 100%;
+    border-radius: 8px;
+    align-items: center;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    justify-content: space-between;
+    padding: 6px 12px;
+    position: relative;
+}
+
+.extension-view-issue-list-items{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.extension-view-issue-list-item{
+    background: rgb(246, 246, 246);
+    border-radius: 6px;
+    padding: 9px 6px 12px 12px;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    margin-bottom: 8px;
+    /* height: 102px; */
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+}
+
+.extension-view-issue-list-item:hover{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(218, 218, 218);
+}
+
+.extension-view-issue-list-item-header{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+    max-height: 26px;
+    align-items: center;
+}
+
+.extension-view-issue-list-item-id{
+    background-color: rgb(238, 238, 238);
+    border-radius: 16px;
+    padding: 4px 8px;
+    color: rgb(31, 31, 31);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    user-select: none;
+}
+
+.extension-view-issue-list-item-time{
+    color: rgb(103, 108, 118);
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    height: 18px;
+    margin-right: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.extension-view-issue-item-context-menu{
+    align-items: center;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    /* flex-direction: column; */
+    flex-shrink: 0;
+    height: 24px;
+    justify-content: center;
+    margin-left: 8px;
+    position: relative;
+    transition: all 0.12s ease 0s;
+    width: 24px;
+}
+
+.extension-view-issue-item-context-menu:hover{
+    background-color: rgb(51, 51, 51);
+}
+
+.extension-view-issue-list-item-link{
+    width: 0;
+    transition: width 0.2s;
+}
+
+.extension-view-issue-list-item:hover .extension-view-issue-list-item-link{
+    width: 16px;
+}
+
+.extension-view-issue-list-item-body{
+    color: rgb(15, 15, 15);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    padding-left: 4px;
+    white-space: normal;
+    word-break: break-all;
+}
+
+#extension-view-issue-list-title-dropdown-content{
+    background-color: white;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    border-left: 1px solid rgb(218, 218, 218);
+    border-radius: 0px 0px 8px 8px;
+    border-right: 1px solid rgb(218, 218, 218);
+    box-sizing: border-box;
+    flex-direction: column;
+    left: 0px;
+    max-height: 50vh;
+    overflow-y: auto;
+    position: absolute;
+    right: 0px;
+    top: 90%;
+    display: none;
+    position: absolute;
+    z-index: 2000002;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+#extension-view-issue-list-title-dropdown-content.show{
+    display: flex;
+}
+
+.extension-view-path{
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 8px 12px;
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    background-color: white;
+}
+
+.extension-view-path.selected, .extension-view-path:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+.extension-view-toolbar{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    z-index: 2000000;
+
+    transition: right 0.2s;
+}
+
+.extension-view-setting-visibility{
+    align-items: center;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgba(202, 202, 202, 0.5);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    transition: all 0.2s ease 0s;
+    width: 40px;
+}
+
+.extension-view-setting-visibility:hover{
+    background-color: white;
+}
+
+.extension-view-show-issue-list{
+    backdrop-filter: blur(16px);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgba(202, 202, 202, 0.5);
+    border: 1px solid rgba(15, 15, 15, 0.1);
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    min-width: 57px;
+    transition: all 0.2s ease 0s;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.extension-view-show-issue-list:hover{
+    background-color: white;
+}
+
+.extension-issue{
+    position: absolute; 
+    margin: 0px; 
+    padding: 0px; 
+    background-color: rgba(15, 15, 15, 0.75); 
+    width: 32px; 
+    height: 32px; 
+    border-radius: 
+    0px 32px 32px; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: none; 
+    color: white; 
+    z-index: 2000000;
+}
+
+.extension-issue[state="show"]{
+    border-radius: 8px;
+    width: 410px;
+    background-color: transparent;
+    z-index: 2000001;
+}
+
+.extension-issue-icon{
+    width: 26px; 
+    height: 26px; 
+    border-radius: 13px; 
+    margin: 2px; 
+    background-color: black;
+}
+
+.extension-issue[state="show"] .extension-issue-icon{
+    display: none;
+}
+
+.extension-issue .extension-view-issue-list-item{
+    display: none;
+    background-color: rgba(15, 15, 15, 0.75); 
+    filter: drop-shadow(rgba(0, 0, 0, 0.48) 0px 0px 1px) drop-shadow(rgba(0, 0, 0, 0.24) 0px 16px 32px);
+    backdrop-filter: blur(6px);
+    color: white;
+}
+
+.extension-issue[state="show"] .extension-view-issue-list-item{
+    display: block;
+}
+
+.extension-issue .extension-view-issue-list-item-time{
+    color: white;
+}
+
+.extension-issue .extension-view-issue-list-item-body{
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white;
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    border: none;
+    resize: none;
+}
+
+.extension-issue .extension-view-issue-list-item-body:focus{
+    background-color: rgba(15, 15, 15, 0.65);
+    border: #fff;
+}
+
+.extension-issue .extension-view-issue-list-item-link{
+    display: none;
+}
+
+.extension-view-issue-list-item-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.extension-view-issue-detail-btn{
+    background: rgb(242, 242, 242);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.extension-quick-capture-view[state="hidden"] .extension-view-close{
+    display: none !important;
+}
+
+.extension-quick-capture-view[state="hidden"] .extension-issue{
+    display: none;
+}
+
+.extension-quick-capture-view[state="hidden"] .extension-view-toolbar{
+    right: -57px;
+}
+
+.extension-quick-capture-view[state="hidden"] .extension-view-setting-visibility{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgb(15, 15, 15);
+}
+
+.extension-view-setting-hidden{
+    display: none;
+}
+
+.extension-quick-capture-view[state="hidden"] .extension-view-setting-visible{
+    display: none;
+}
+
+.extension-quick-capture-view[state="hidden"] .extension-view-setting-hidden{
+    display: block;
+}
+
+.extension-new-project{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2000020;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    backdrop-filter: blur(4px);
+    display: flex;
+    z-index: 2000020;
+}
+
+.extension-new-project-dialog{
+    max-width: 524px;
+    position: fix;
+    margin: auto;
+    z-index: 2000021;
+    background-color: white;
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+}
+
+.extension-new-project[state="disable"] .extension-new-project-body-input-clear{
+    display: none;
+}
+
+.extension-new-project[state="enable"] .extension-new-project-body-input-clear{
+    display: block;
+}
+
+.extension-new-project[state="disable"] .extension-new-project-btn{
+    background-color: rgb(218, 218, 218);
+    color: rgb(103, 108, 118);
+    cursor: no-drop;
+}
+
+.extension-new-project[state="enable"] .extension-new-project-btn{
+    background-color: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.extension-new-project[state="waiting"] .spinner{
+    display: block;
+}
+
+.project-view[state="hidden"] .extension-view-close{
+    display: none !important;
+}
+
+.project-view[state="hidden"] .extension-issue{
+    display: none;
+}
+
+.project-view[state="hidden"] .extension-view-toolbar{
+    right: -57px;
+}
+
+.project-view[state="hidden"] .extension-view-setting-visibility{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), rgb(15, 15, 15);
+}
+
+.extension-view-setting-hidden{
+    display: none;
+}
+
+.project-view[state="hidden"] .extension-view-setting-visible{
+    display: none;
+}
+
+.project-view[state="hidden"] .extension-view-setting-hidden{
+    display: block;
+}
+
+.project-view[state="hidden"] .extension-new-issue-btn{
+    bottom: -40px;
+}
+
+.extension-new-issue-btn{
+    align-items: center;
+    background: linear-gradient(90deg, rgb(63, 161, 247) 0%, rgb(74, 106, 221) 100%);
+    border-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    bottom: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: 40px;
+    left: calc((50% - 78px) - 0.5px);
+    opacity: 1;
+    overflow: hidden;
+    padding: 4px 16px;
+    position: fixed;
+    transition: all 0.2s ease 0s;
+    z-index: 2000000;
+
+    animation-name: new-issue-btn-animation;
+    animation-duration: 0.2s;
+}
+
+@keyframes new-issue-btn-animation {
+    0% {bottom: -40px;}
+    50% {bottom: 20px;}
+}
+.extension-new-issue-btn:hover{
+    filter: drop-shadow(rgba(0, 0, 0, 0.48) 0px 0px 1px) drop-shadow(rgba(0, 0, 0, 0.24) 0px 16px 32px);
+}
+
+#extension #extension-project-back{
+    transform: translateX(-60px) translateZ(0px);
+    opacity: 1;
+    bottom: 16px;
+    box-sizing: border-box;
+    left: 12px;
+    position: fixed;
+    z-index: 2000000;
+    transition: transform 0.2s;
+}
+
+#extension[state="project-new-issue"] #extension-project-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension[state="project-issue-selected"] #extension-project-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension[state="project-issue-posting"] #extension-project-back{
+    transform: translateX(0px) translateZ(0px);
+}
+
+#extension #extension-project-back-container{
+    align-items: center;
+    background: linear-gradient(90deg, rgb(63, 161, 247) 0%, rgb(74, 106, 221) 100%);
+    border-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    position: relative;
+    transition: all 0.2s ease 0s;
+    width: 40px;
+}
+
+#extension #extension-project-back-icon{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    overflow: hidden;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+#extension #extension-project-back-top-icon{
+    align-items: center;
+    background: rgb(202, 202, 202);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: center;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    transition: background-color 0.2s ease 0s;
+    width: 20px;
+}
+
+#extension #extension-project-back-top-icon-container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#extension .extension-project-temp{
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 68px;
+    max-height: 68px;
+    min-height: 68px;
+    padding: 12px 16px;
+    transition: all 0.3s ease 0s;
+}
+
+.extension-project-temp .extension-project-mark{
+    border-color: rgb(202, 202, 202) !important;
+}
+
+.extension-project-temp .extension-project-time{
+    transition: all 0.2s;
+    color: rgb(103, 108, 118) !important;
+}
+
+.extension-project-temp .extension-project-issues{
+    transition: all 0.2s;
+    color: rgb(103, 108, 118) !important;
+}
+
+.extension-project-temp:hover .extension-project-mark{
+    border-color: rgb(103, 108, 118) !important;
+}
+
+.extension-project-temp:hover .extension-project-time{
+    transition: all 0.2s;
+    color: rgb(68, 68, 68) !important;
+}
+
+.extension-project-temp:hover .extension-project-issues{
+    transition: all 0.2s;
+    color: rgb(68, 68, 68) !important;
+}
+
+.extension-issue-saved{
+    backdrop-filter: blur(8.36667px);
+    background: linear-gradient(90deg, rgba(63, 161, 247, 0.8) 0%, rgba(74, 106, 221, 0.8) 100%);
+    border-radius: 16px;
+    box-shadow: rgb(255 255 255 / 10%) -8.36667px 8.36667px 8.36667px inset;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    width: 320px;
+    position: fixed;
+    right: -320px;
+    bottom: 20px;
+    z-index: 2000030;
+    transition: right 0.2s;
+}
+
+.extension-issue-saved-btn{
+    border: none;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    gap: 10px;
+    height: 40px;
+    padding: 4px 12px 4px 4px;
+}
+
+.extension-issue-saved-btn:hover{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.extension-issue-item-context-menu{
+    background: rgb(29, 29, 29);
+    border: 1px solid rgb(51, 51, 51);
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 0px 10px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-family: SwissIntl, sans-serif;
+    width: 200px;
+    outline: none;
+    overflow: hidden;
+    position: fixed;
+    z-index: 2000030;
+    padding: 6px 4px;
+    font-size: 12px;
+
+    animation-name: issue-item-context-menu-animation;
+    animation-duration: 0.2s;
+}
+
+@keyframes issue-item-context-menu-animation {
+    0% {transform: translateY(20px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 1;}
+}
+
+.extension-issue-item-context-menu.closing{
+    transition: all 0.2s;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.extension-issue-item-context-menu-btn{
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: rgb(232, 233, 241);
+    cursor: pointer;
+    font-family: SwissIntl, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 4px;
+    margin-right: 4px;
+    outline: none;
+    padding: 6px 12px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.extension-issue-item-context-menu-btn:hover{
+    background-color: rgb(51, 51, 51);
+}

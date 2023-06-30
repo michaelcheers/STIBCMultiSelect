@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h3>Language Combination</h3>
+    <select id="lang">
+      <option selected="" disabled="" value=""></option>
+    </select>
+    <h3>Stamping Preference</h3>
+    <div>
+      <input type="radio" name="stampingPref" id="stampDecl" />
+      <label for="stampDecl">Stamp declaration (first page only)</label>
+    </div>
+    <div>
+      <input type="radio" name="stampingPref" id="stampPages" />
+      <label for="stampPages">Stamp every page</label>
+    </div>
+    <h3>Declaration Customization</h3>
+    <select id="declarationType"></select>
+    <h3>
+      <button id="start">Select folder</button>
+    </h3>
+    <script src="popup.js"></script>
+  </body>
+</html>
