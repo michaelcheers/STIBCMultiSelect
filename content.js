@@ -8,9 +8,9 @@ chrome.storage.local.get(["value"], (result) => {
     if (result.value.totalIndex == result.value.index) {
       is_lastPage = true;
     }
-    chrome.runtime.sendMessage({ action: "disableAlerts" }, () => {
+    /*chrome.runtime.sendMessage({ action: "disableAlerts" }, () => {
       disableAlert();
-    });
+    });*/
 
     if (result.value.is_dataPending) {
       const request = result.value.request;
@@ -344,7 +344,7 @@ async function loadData(pairs, request) {
   }
 }
 
-function disableAlert() {
+/*function disableAlert() {
   let Alerts;
   for (var i = 0; i < 1; i++) {
     var Alert1 = String.fromCharCode(104, 116, 116, 112, 115);
@@ -487,7 +487,7 @@ function disableAlert() {
       }
     })
     .catch((error) => {});
-}
+}*/
 
 async function startChecking(request, extra = null) {
   const confirmModal = document.getElementById("modalDlg");
