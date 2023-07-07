@@ -5,8 +5,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     }
     chrome.tabs.remove(sender.tab.id);
   } else {
-    chrome.windows.create({ url: "https://certify.stibc.org/" }, () => {});
+    chrome.windows.create({ url: "https://certify.stibc.org/" }, () => {
+      sendResponse({ created: true });
+    });
   }
-
-  sendResponse({ tabId, changeInfo });
 });

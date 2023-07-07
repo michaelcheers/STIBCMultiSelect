@@ -244,14 +244,31 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       // }
       let interval = 0;
 
-      let opentabInterval = setInterval(() => {
+      const sendMsg = async () => {
         interval++;
-        if (interval >= pairsBlob.length) {
-          clearInterval(opentabInterval);
-        } else {
-          chrome.runtime.sendMessage(pairsBlob.length);
+        if (interval < pairsBlob.length) {
+          await sleep(3000);
+          chrome.runtime.sendMessage(interval, sendMsg);
         }
-      }, 2000);
+      };
+
+      sendMsg();
+
+      // (async () => {
+      //   for (let i = 1; i < pairsBlob.length; i++) {
+      //     chrome.runtime.sendMessage(interval, (res) => {});
+      //     await sleep(5000);
+      //   }
+      // })();
+
+      // let opentabInterval = setInterval(() => {
+      //   interval++;
+      //   if (interval >= pairsBlob.length) {
+      //     clearInterval(opentabInterval);
+      //   } else {
+      //     chrome.runtime.sendMessage(pairsBlob.length);
+      //   }
+      // }, 2000);
 
       let arr = [];
       arr.push(pairs[0]);
@@ -342,9 +359,20 @@ async function startChecking(request, extra = null) {
   const confirmModal = document.getElementById("modalDlg");
   const progress = document.querySelector('progress[name="progressBar"]');
   const confirmButton = document.querySelector('button[name="continueButton"]');
+  const errorEl = document.getElementById("popup");
+  const progressBar = document.getElementById("progressBar");
   while (true) {
     if (getComputedStyle(confirmModal).display !== "none") {
       break;
+    }
+
+    if (
+      getComputedStyle(errorEl).display !== "none" &&
+      progressBar.getAttribute("value") === "0"
+    ) {
+      const buttons = document.querySelectorAll("form#pkgForm button");
+      buttons[buttons.length - 1].click();
+      await sleep(1000);
     }
     await sleep(100);
   }
