@@ -60,11 +60,11 @@ chrome.storage.local.get(["value"], (result) => {
 
         orgFile = blobToFile(
           orgbblob,
-          indexData.OrginalFileName + indexData.fileExt
+          indexData.OrginalFileName + indexData.orgFileExt
         );
         transFile = blobToFile(
           transblobb,
-          indexData.translatedFileName + indexData.fileExt
+          indexData.translatedFileName + indexData.transFileExt
         );
 
         let NamewE = indexData.filename;
@@ -219,14 +219,18 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
             const orgBlob = await blobToDataURL(originFile);
             const transBlob = await blobToDataURL(translatedFile);
-            let x = originFile.name.split(".");
-            let fileExt = "." + x[x.length - 1];
+            let org = originFile.name.split(".");
+            let orgFileExt = "." + org[org.length - 1];
+
+            let trans = translatedFile.name.split(".");
+            let transFileExt = "." + trans[trans.length - 1];
 
             pairsBlob.push({
               orgBlob,
               transBlob,
               filename,
-              fileExt,
+              orgFileExt,
+              transFileExt,
               OrginalFileName,
               translatedFileName,
             });
